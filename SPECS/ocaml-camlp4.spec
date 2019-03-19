@@ -5,22 +5,16 @@
 %global debug_package %{nil}
 %endif
 
-# We're building from the 4.04 branch of upstream git:
-# https://github.com/ocaml/camlp4/tree/4.04
-%global gitcommit 30fc8cd92bd80c20db2d05bbd19102e7a67b27c2
-%global shortcommit 30fc8cd
-
-
 Name:          ocaml-camlp4
-Version:       4.04.2
-Release:       0.2.git%{shortcommit}%{?dist}
+Version:       4.06.1
+Release:       2%{?dist}
 
 Summary:       Pre-Processor-Pretty-Printer for OCaml
 
 License:       LGPLv2+ with exceptions
 
 URL:           https://github.com/ocaml/camlp4
-Source0:       https://repo.citrite.net:443/ctx-local-contrib/xs-opam/camlp4-%{gitcommit}.tar.gz
+Source0:       https://repo.citrite.net:443/ctx-local-contrib/xs-opam/camlp4-4.06+1.tar.gz
 
 BuildRequires: ocaml-ocamlbuild
 
@@ -52,7 +46,7 @@ This package contains the development files.
 
 
 %prep
-%setup -q -n camlp4-%{gitcommit}
+%setup -q -n camlp4-4.06-1
 
 
 %build
@@ -117,8 +111,38 @@ make install \
 
 
 %changelog
-* Mon Jun 26 2017 Marcello Seri <marcello.seri@citrix.com> - 4.04.2-0.2.gitc30fc8cd
-- Update camlp4 with support to 4.04.2
+* Thu Feb 08 2018 Fedora Release Engineering <releng@fedoraproject.org> - 4.06.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
+* Tue Nov 07 2017 Richard W.M. Jones <rjones@redhat.com> - 4.06.0-1
+- OCaml 4.06.0 rebuild.
+
+* Mon Aug 07 2017 Richard W.M. Jones <rjones@redhat.com> - 4.05.0-0.4.gitfc12d8c7
+- Bump release and rebuild.
+
+* Mon Aug 07 2017 Richard W.M. Jones <rjones@redhat.com> - 4.05.0-0.3.gitfc12d8c7
+- Bump release and rebuild.
+
+* Mon Aug 07 2017 Richard W.M. Jones <rjones@redhat.com> - 4.05.0-0.2.gitfc12d8c7
+- OCaml 4.05.0 rebuild.
+
+* Mon Aug 07 2017 Richard W.M. Jones <rjones@redhat.com> - 4.05.0-0.1
+- Move to upstream 4.05 branch.
+
+* Thu Aug 03 2017 Fedora Release Engineering <releng@fedoraproject.org> - 4.04.2-0.3.gite22d568b
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
+
+* Thu Jul 27 2017 Fedora Release Engineering <releng@fedoraproject.org> - 4.04.2-0.2.gite22d568b
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
+
+* Mon Jun 26 2017 Richard W.M. Jones <rjones@redhat.com> - 4.04.2-0.1.gite22d568b
+- OCaml 4.04.2 rebuild.
+
+* Thu May 11 2017 Richard W.M. Jones <rjones@redhat.com> - 4.04.1-0.4.gite22d568b
+- OCaml 4.04.1 rebuild.
+
+* Wed May 10 2017 Richard W.M. Jones <rjones@redhat.com> - 4.04.1-0.3.gite22d568b
+- Move along upstream 4.04 branch.
 
 * Sat Feb 11 2017 Fedora Release Engineering <releng@fedoraproject.org> - 4.04.0-0.2.gitc32e8970
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
